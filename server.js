@@ -1,7 +1,7 @@
 "use strict";
 const express = require("express");
 const app = express();
-const cart = require("./cart.js");
+const cart = require("./routes/cart.js");
 const port = 3000;
 
 app.use(express.static("./public"));

@@ -1,0 +1,16 @@
+<section class="list-container">
+    <section class="item" ng-repeat="item in $ctrl.cart">
+        <section class="overlay"></section>
+        <i ng-click="$ctrl.removeItem(item.id)" class="material-icons">remove_shopping_cart</i>
+        <p>{{item.product}}</p>
+        <p>{{item.price}} Credits</p>
+        <p>Qty: <input class="update-qty" type="number" ng-model="item.quantity" ng-blur="$ctrl.updateItem(item)"></p>
+    </section>
+</section>
+
+<form name="itemForm" ng-submit="$ctrl.addItem($ctrl.newItem)">
+    <label>Item: </label><input type="text" ng-model="$ctrl.newItem.product">
+    <label>Price: </label><input class="price_input" type="number" ng-model="$ctrl.newItem.price">
+    <label>Quantity: </label><input class="qty_input" type="number" ng-model="$ctrl.newItem.quantity">
+    <button>Add To Cart</button>
+</form>
